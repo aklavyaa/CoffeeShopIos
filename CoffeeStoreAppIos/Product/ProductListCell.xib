@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="150" id="KGk-i7-Jjw" customClass="ProductListCell" customModule="CoffeeStoreAppIos" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="snC-y0-veC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="145"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ch-jU-Nty" userLabel="left_view">
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="145"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="ProductListCell" image="coffee_splash" translatesAutoresizingMaskIntoConstraints="NO" id="5Ey-OZ-oXz" customClass="ProductListcell">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="145"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="5Ey-OZ-oXz" secondAttribute="trailing" id="BiJ-MQ-tkR"/>
+                                    <constraint firstItem="5Ey-OZ-oXz" firstAttribute="leading" secondItem="3ch-jU-Nty" secondAttribute="leading" id="LiO-OU-D0P"/>
+                                    <constraint firstItem="5Ey-OZ-oXz" firstAttribute="top" secondItem="3ch-jU-Nty" secondAttribute="top" id="a3F-U9-KOV"/>
+                                    <constraint firstAttribute="bottom" secondItem="5Ey-OZ-oXz" secondAttribute="bottom" id="fxQ-BR-1hB"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F1i-ds-VQk" userLabel="right_view">
+                                <rect key="frame" x="128" y="0.0" width="192" height="145"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="KYg-kG-QQ6">
+                                        <rect key="frame" x="8" y="36.5" width="104" height="72"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cappucino " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZC5-Ok-dVg">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="25.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hot Milk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9T-1c-zNT">
+                                                <rect key="frame" x="0.0" y="29.5" width="104" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$8.6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JN-du-hbo">
+                                                <rect key="frame" x="0.0" y="51.5" width="104" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="KYg-kG-QQ6" firstAttribute="leading" secondItem="F1i-ds-VQk" secondAttribute="leading" constant="8" id="B4M-nI-LNo"/>
+                                    <constraint firstItem="KYg-kG-QQ6" firstAttribute="centerY" secondItem="F1i-ds-VQk" secondAttribute="centerY" id="UiR-ec-JAg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="F1i-ds-VQk" firstAttribute="width" secondItem="3ch-jU-Nty" secondAttribute="width" multiplier="1.5" id="WmO-Ce-zOx"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="snC-y0-veC" secondAttribute="trailing" id="Avi-mv-mnq"/>
+                    <constraint firstItem="snC-y0-veC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ITL-iz-YQC"/>
+                    <constraint firstAttribute="bottom" secondItem="snC-y0-veC" secondAttribute="bottom" constant="5" id="PBC-7e-uEv"/>
+                    <constraint firstItem="snC-y0-veC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="PU1-70-a8E"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="389.85507246376812" y="23.4375"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="coffee_splash" width="1000" height="1500"/>
+    </resources>
+</document>

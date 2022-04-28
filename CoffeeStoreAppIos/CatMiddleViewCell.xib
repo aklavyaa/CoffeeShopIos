@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CatMiddleViewCell" customModule="CoffeeStoreAppIos" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="175" height="71"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="175" height="71"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zPg-xr-ikj" userLabel="UICatCell">
+                        <rect key="frame" x="0.0" y="0.0" width="175" height="71"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bIt-p9-1gF">
+                                <rect key="frame" x="0.0" y="0.0" width="175" height="71"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zju-Nq-AZQ" userLabel="left_view">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="71"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffee" translatesAutoresizingMaskIntoConstraints="NO" id="sHV-JB-92G">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="71"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="sHV-JB-92G" secondAttribute="bottom" id="MPK-Tv-RnS"/>
+                                            <constraint firstAttribute="trailing" secondItem="sHV-JB-92G" secondAttribute="trailing" id="X0u-S0-SwQ"/>
+                                            <constraint firstItem="sHV-JB-92G" firstAttribute="leading" secondItem="Zju-Nq-AZQ" secondAttribute="leading" id="aFY-ya-1RB"/>
+                                            <constraint firstItem="sHV-JB-92G" firstAttribute="top" secondItem="Zju-Nq-AZQ" secondAttribute="top" id="pcc-99-fjR"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oOt-zy-VhT" userLabel="right_view">
+                                        <rect key="frame" x="70" y="0.0" width="105" height="71"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beverages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9L-oE-c1a">
+                                                <rect key="frame" x="8" y="0.0" width="72.5" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="67 Menus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K1S-ll-TZN">
+                                                <rect key="frame" x="8" y="22" width="64" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.015686274510000001" green="0.46274509800000002" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="K1S-ll-TZN" firstAttribute="top" secondItem="H9L-oE-c1a" secondAttribute="bottom" constant="4" id="NJ7-oV-EwE"/>
+                                            <constraint firstItem="H9L-oE-c1a" firstAttribute="top" secondItem="oOt-zy-VhT" secondAttribute="top" id="dBg-qw-ZvS"/>
+                                            <constraint firstItem="H9L-oE-c1a" firstAttribute="leading" secondItem="oOt-zy-VhT" secondAttribute="leading" constant="8" id="gkE-9Z-VYu"/>
+                                            <constraint firstItem="K1S-ll-TZN" firstAttribute="leading" secondItem="oOt-zy-VhT" secondAttribute="leading" constant="8" id="lSl-gT-inI"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="oOt-zy-VhT" firstAttribute="width" secondItem="Zju-Nq-AZQ" secondAttribute="width" multiplier="1.5" id="cgs-Tj-eOB"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bIt-p9-1gF" firstAttribute="top" secondItem="zPg-xr-ikj" secondAttribute="top" id="80B-WR-84h"/>
+                            <constraint firstAttribute="bottom" secondItem="bIt-p9-1gF" secondAttribute="bottom" id="adc-Bc-Y6U"/>
+                            <constraint firstItem="bIt-p9-1gF" firstAttribute="leading" secondItem="zPg-xr-ikj" secondAttribute="leading" id="f2P-3i-25m"/>
+                            <constraint firstAttribute="trailing" secondItem="bIt-p9-1gF" secondAttribute="trailing" id="xhK-uW-OKo"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="zPg-xr-ikj" secondAttribute="bottom" id="2R3-24-cNH"/>
+                <constraint firstAttribute="trailing" secondItem="zPg-xr-ikj" secondAttribute="trailing" id="IOi-h2-9XV"/>
+                <constraint firstItem="zPg-xr-ikj" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="YYH-vM-yCf"/>
+                <constraint firstItem="zPg-xr-ikj" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="lIU-Ct-nOB"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="175" height="71"/>
+            <point key="canvasLocation" x="193.47826086956522" y="96.763392857142847"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="coffee" width="32" height="32"/>
+    </resources>
+</document>
