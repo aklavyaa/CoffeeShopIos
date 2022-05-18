@@ -5,7 +5,7 @@
 //  Created by admin user on 2022-04-15.
 //  Copyright © 2022 admin user. All rights reserved.
 //
-// Gurwinder
+// Prabhjeet 
 import UIKit
 
 class InventoryViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
@@ -55,7 +55,7 @@ class InventoryViewController: UIViewController,UITableViewDelegate,UITableViewD
             if indexPath.row > 2{
                 cells.featuredText.isHidden = true
             } else {
-                                cells.featuredText.isHidden = false
+                            cells.featuredText.isHidden = false
             
             
             
@@ -68,10 +68,7 @@ class InventoryViewController: UIViewController,UITableViewDelegate,UITableViewD
             return cell
                               
         }
-        
-   
-        
-        
+          
         return cell
         
         
