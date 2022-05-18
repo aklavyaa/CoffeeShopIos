@@ -10,9 +10,18 @@ import UIKit
 
 class InventoryViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return featuredList.count + 2
     }
     
+    var featuredList: [Product] = []
+    
+    func getFeaturedList()  {
+       var filteredList = StoreRes.productList.filter {
+            $0.isFeatured.contains("1")
+        }
+        featuredList = filteredList
+        
+    }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -23,21 +32,39 @@ class InventoryViewController: UIViewController,UITableViewDelegate,UITableViewD
                     
         
         } else if indexPath.row == 1 {
-              cell   = tableView.dequeueReusableCell(withIdentifier: "MiddelViewCellTableViewCell",for: indexPath) as! MiddelViewCellTableViewCell
+             let cells   = tableView.dequeueReusableCell(withIdentifier: "MiddelViewCellTableViewCell",for: indexPath) as! MiddelViewCellTableViewCell
             
+            cells.parent = self
             
+            cell = cells
                               
                   
         }else  {
              let cells   = tableView.dequeueReusableCell(withIdentifier: "EndViewTableViewCell",for: indexPath) as! EndViewTableViewCell
             
+            
+            cells.productName.text = " \(featuredList[indexPath.row - 2].productName)"
+            
+             cells.productPrice.text = "$\(featuredList[indexPath.row - 2].productPrice)"
+                      
+            cells.productImage.image = UIImage(named: featuredList[indexPath.row - 2].productImage)
+            
+             cells.productShortDescription.text = "\(featuredList[indexPath.row - 2].productDescription)"
+                      
+            
             if indexPath.row > 2{
                 cells.featuredText.isHidden = true
             } else {
                                 cells.featuredText.isHidden = false
+            
+            
+            
             }
             
             cell = cells as EndViewTableViewCell
+            
+            
+           
             return cell
                               
         }
@@ -52,8 +79,10 @@ class InventoryViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ProductListViewController") as? ProductListViewController
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ProductDescriptionVC") as? ProductDescriptionVC
 
+        vc!.prodID = featuredList[indexPath.row - 2].productId
+        
         self.navigationController?.pushViewController(vc!, animated: true)
         
     }
@@ -76,6 +105,7 @@ class InventoryViewController: UIViewController,UITableViewDelegate,UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        getFeaturedList()
         
         mainList.dataSource = self
         mainList.delegate = self
