@@ -10,16 +10,55 @@ import UIKit
 
 class ProductListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    var catId : String = ""
     
+    
+    
+    
+    
+    var isEditPRod = false
+    
+        var filteredList: [Product] = []
+
+    
+        func getFeaturedList()  {
+            
+            if isEditPRod {
+                
+                self.filteredList = StoreRes.productList
+                
+            }else {
+                var filteredList = StoreRes.productList.filter {
+                             $0.catId.contains(catId)
+                         }
+                         
+                         self.filteredList = filteredList
+            }
+        
+        
+    }
+    
+
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
          
-        return 12
+        return filteredList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = productListTableView.dequeueReusableCell(withIdentifier: "ProductListCell", for: indexPath) as! ProductListCell
+        
+        
+        cell.prodName.text = filteredList[indexPath.row].productName
+        
+        cell.prodDescription.text = filteredList[indexPath.row].productDescription
+        
+        
+        cell.prodImage.image = UIImage(named: filteredList[indexPath.row].productImage)
+        
+        
+        cell.prodPrice.text = "$\(filteredList[indexPath.row].productPrice)"
         
         return cell
     
@@ -28,10 +67,28 @@ class ProductListViewController: UIViewController,UITableViewDelegate,UITableVie
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ProductDescriptionVC") as! ProductDescriptionVC
+        if isEditPRod {
+            
+             let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ProductUpdate") as! ProductUpdate
 
-        
-        self.navigationController?.pushViewController(vc, animated: true)
+
+            vc.prodId = filteredList[indexPath.row].productId
+            
+            
+            vc.prodPosition = indexPath.row
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+            
+        } else {
+             
+                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ProductDescriptionVC") as! ProductDescriptionVC
+
+                   vc.prodID = filteredList[indexPath.row].productId
+                   self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
+       
     
     }
     
@@ -46,6 +103,12 @@ class ProductListViewController: UIViewController,UITableViewDelegate,UITableVie
     @IBOutlet weak var productListTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+             getFeaturedList()
+            
+        
+       
+        
         productListTableView.delegate = self
         productListTableView.dataSource = self
         

@@ -22,7 +22,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ch-jU-Nty" userLabel="left_view">
                                 <rect key="frame" x="0.0" y="0.0" width="128" height="145"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="ProductListCell" image="coffee_splash" translatesAutoresizingMaskIntoConstraints="NO" id="5Ey-OZ-oXz" customClass="ProductListcell">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="ProductListCell" image="coffee_splash" translatesAutoresizingMaskIntoConstraints="NO" id="5Ey-OZ-oXz">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="145"/>
                                     </imageView>
                                 </subviews>
@@ -81,6 +81,12 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="prodDescription" destination="l9T-1c-zNT" id="3K0-dD-2hd"/>
+                <outlet property="prodImage" destination="5Ey-OZ-oXz" id="56k-B5-Bnu"/>
+                <outlet property="prodName" destination="ZC5-Ok-dVg" id="EQi-uw-jMD"/>
+                <outlet property="prodPrice" destination="8JN-du-hbo" id="CGw-Ed-c5R"/>
+            </connections>
             <point key="canvasLocation" x="389.85507246376812" y="23.4375"/>
         </tableViewCell>
     </objects>
