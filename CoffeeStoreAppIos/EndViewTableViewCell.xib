@@ -94,6 +94,10 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="featuredText" destination="L6M-ME-Jy4" id="t5s-kU-crc"/>
+                <outlet property="productImage" destination="Rhj-iX-N6X" id="Zwa-bF-so3"/>
+                <outlet property="productName" destination="b2K-zr-fJ0" id="Q2A-QE-63y"/>
+                <outlet property="productPrice" destination="8lc-6I-mfr" id="ceY-FF-guY"/>
+                <outlet property="productShortDescription" destination="oVB-D5-uio" id="aMX-w9-jLV"/>
             </connections>
             <point key="canvasLocation" x="-160.1449275362319" y="146.98660714285714"/>
         </tableViewCell>
