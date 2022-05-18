@@ -9,8 +9,24 @@
 import UIKit
 
 class ProductDescriptionVC: UIViewController {
+    @IBOutlet weak var prodImage: UIImageView!
+    
+    @IBAction func addToCart(_ sender: UIButton) {
+        prepareCart()
+        
+          let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "CartListVC") as? CartListVC
 
+           
+              
+              self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    @IBOutlet weak var prodTitle: UILabel!
     var num : Int = 1
+    
+    @IBOutlet weak var prodDescription: UILabel!
+    var prodID = ""
+    
     
     @IBOutlet weak var number: UILabel!
     
@@ -31,9 +47,24 @@ class ProductDescriptionVC: UIViewController {
     @IBOutlet weak var largeCheck: UIImageView!
     @IBOutlet weak var mediumCheck: UIImageView!
     @IBOutlet weak var smallCheck: UIImageView!
+    
+    
+    var prodDetail = [Product]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
+       prodDetail = StoreRes.productList.filter {
+            $0.productId.contains(prodID)
+        }
+           
+        
+        
+        
+        
         let smallViewGesture = UITapGestureRecognizer(target: self, action:  #selector(self.smallViewTap(sender:)))
         
 
@@ -51,9 +82,33 @@ class ProductDescriptionVC: UIViewController {
         self.largeView.addGestureRecognizer(largeViewGesture)
         
         // Do any additional setup after loading the view.
+    
+    
+        prodTitle.text = prodDetail[0].productName
+    
+        
+        prodImage.image = UIImage(named: prodDetail[0].productImage)
+        
+        prodDescription.text = prodDetail[0].productDescription
+        
+        
+        prodPrice.text = "$\(prodDetail[0].productPrice)"
+        
     }
     
     
+    func prepareCart() {
+        StoreRes.cartList.append(Cart(productId: prodDetail[0].productId, productName: prodDetail[0].productName, productDescription: prodDetail[0].productDescription, productPrice: prodDetail[0].productPrice, catId: prodDetail[0].catId, isFeatured: prodDetail[0].isFeatured, quantity: String(num), totalPrice: String(Float(prodDetail[0].productPrice)! * Float(num))))
+    
+    
+    
+        print(StoreRes.cartList)
+        
+    }
+    
+    
+    
+    @IBOutlet weak var prodPrice: UILabel!
     @objc func smallViewTap(sender : UITapGestureRecognizer) {
         // Do what you want
 
