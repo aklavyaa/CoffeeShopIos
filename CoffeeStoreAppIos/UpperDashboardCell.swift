@@ -2,7 +2,7 @@
 //  UpperDashboardCell.swift
 //  CoffeeStoreAppIos
 //
-//  Created by admin user on 2022-04-16.
+//  Created by Gurwinder on 2022-04-16.
 //  Copyright © 2022 admin user. All rights reserved.
 //
 
@@ -33,10 +33,10 @@ class UpperDashboardCell: UITableViewCell,UICollectionViewDelegate,UICollectionV
     
     
     
-    @IBOutlet weak var hello: UILabel!
+   
     
     @IBOutlet weak var name: UILabel!
-    
+    @IBOutlet weak var hello: UILabel! 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
