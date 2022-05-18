@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  CoffeeStoreAppIos
 //
-//  Created by admin user on 2022-04-14.
+//  Created by Gurwinder on 2022-04-14.
 //  Copyright © 2022 admin user. All rights reserved.
 //
 
@@ -45,8 +45,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidEnterBackground(_ scene: UIScene) {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
+       
+       
+       
         // to restore the scene back to its current state.
 
+        
+        
         // Save changes in the application's managed object context when the application transitions to the background.
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
