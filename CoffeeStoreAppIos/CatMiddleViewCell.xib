@@ -25,13 +25,16 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zju-Nq-AZQ" userLabel="left_view">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="71"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffee" translatesAutoresizingMaskIntoConstraints="NO" id="sHV-JB-92G">
-                                                <rect key="frame" x="0.0" y="0.0" width="70" height="71"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cold_coffee" translatesAutoresizingMaskIntoConstraints="NO" id="sHV-JB-92G">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="Ly8-04-j4f"/>
+                                                </constraints>
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="sHV-JB-92G" secondAttribute="bottom" id="MPK-Tv-RnS"/>
                                             <constraint firstAttribute="trailing" secondItem="sHV-JB-92G" secondAttribute="trailing" id="X0u-S0-SwQ"/>
                                             <constraint firstItem="sHV-JB-92G" firstAttribute="leading" secondItem="Zju-Nq-AZQ" secondAttribute="leading" id="aFY-ya-1RB"/>
                                             <constraint firstItem="sHV-JB-92G" firstAttribute="top" secondItem="Zju-Nq-AZQ" secondAttribute="top" id="pcc-99-fjR"/>
@@ -85,10 +88,15 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="175" height="71"/>
+            <connections>
+                <outlet property="catName" destination="H9L-oE-c1a" id="Ix1-ug-Qbc"/>
+                <outlet property="cellIconImage" destination="sHV-JB-92G" id="6CR-kB-hoZ"/>
+                <outlet property="totalMenuItems" destination="K1S-ll-TZN" id="B5e-7h-SJh"/>
+            </connections>
             <point key="canvasLocation" x="193.47826086956522" y="96.763392857142847"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="coffee" width="32" height="32"/>
+        <image name="cold_coffee" width="64" height="64"/>
     </resources>
 </document>
