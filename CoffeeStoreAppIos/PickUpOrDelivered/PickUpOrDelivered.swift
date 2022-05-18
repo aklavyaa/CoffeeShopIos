@@ -20,6 +20,14 @@ class PickUpOrDelivered: UIViewController {
     
     
     
+    var orderId = ""
+    var totalCost = ""
+    var adddress = ""
+    
+    
+    var pickUp: Bool =  true
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,6 +48,52 @@ class PickUpOrDelivered: UIViewController {
     
     
     
+    @IBAction func pickUpDelivered(_ sender: UIButton) {
+        
+        
+        
+        let randomInt = Int.random(in: 0..<6)
+
+        
+        orderId = String(randomInt)
+        
+        
+        
+        
+        
+        if pickUp {
+      
+            
+            StoreRes.orderList.append(Order(orderID: orderId, totalPrice: totalCost, address: ""))
+            
+            print(StoreRes.orderList)
+                  
+                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ThankYou") as? ThankYou
+
+            
+            
+            
+                        
+                        self.navigationController?.pushViewController(vc!, animated: true)
+            
+            
+            
+        }else {
+                  
+                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ShippingAddressVC") as? ShippingAddressVC
+
+            vc?.orderId = orderId
+            vc?.totalCost = totalCost
+            
+            
+            
+            
+                        self.navigationController?.pushViewController(vc!, animated: true)
+            
+        }
+        
+        
+    }
     
     
     @objc func pickUpViewTap(sender : UITapGestureRecognizer) {
@@ -48,7 +102,8 @@ class PickUpOrDelivered: UIViewController {
         pickUpImage.image = UIImage(named: "filled_button")
         deliveredImage.image = UIImage(named: "empty_button")
         
-      
+      pickUp = true
+        
     }
     
     
@@ -56,7 +111,10 @@ class PickUpOrDelivered: UIViewController {
            // Do what you want
         pickUpImage.image = UIImage(named: "empty_button")
         deliveredImage.image = UIImage(named: "filled_button")
-       }
+        
+        pickUp = false
+     
+    }
     
 
     /*
