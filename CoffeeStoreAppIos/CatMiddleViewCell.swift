@@ -10,6 +10,9 @@ import UIKit
 
 class CatMiddleViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var cellIconImage: UIImageView!
+    @IBOutlet weak var totalMenuItems: UILabel!
+    @IBOutlet weak var catName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
