@@ -2,10 +2,10 @@
 //  OffersUpperPartCell.swift
 //  CoffeeStoreAppIos
 //
-//  Created by admin user on 2022-04-16.
+//  Created by Gurwinder
 //  Copyright © 2022 admin user. All rights reserved.
 //
-
+// 
 import UIKit
 
 class OffersUpperPartCell: UICollectionViewCell {
