@@ -9,7 +9,7 @@
 import UIKit
 
 class EndViewTableViewCell: UITableViewCell {
-
+// Gurwinder
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var productShortDescription: UILabel!
